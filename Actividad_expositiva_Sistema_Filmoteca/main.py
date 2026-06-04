@@ -22,13 +22,12 @@ while True:
     
     if opcion == "1":
         limpiarConsola()
-        i = 0
-        while i < len(Pelicula.peliculas):
-            print(f"- {Pelicula.peliculas[i]} - Stock: {Pelicula.peliculas[i].stock}")
-            i+=1
+        print(f"Películas:\n -{("\n -").join(Pelicula.peliculas)}")
         pelicula = input("Selecciona una película (título completo): ").strip()
         if pelicula in Pelicula.peliculas:
             cantidad = int(input("Ingresa la cantidad de esa película que quieras comprar: "))
+            if cantidad < 1:
+                print("Cantidad inválida.")
         else:
             print("Película inváida.")
         
