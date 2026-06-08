@@ -30,7 +30,7 @@ class Usuario:
                 total = pel1.precio_unitario * cantidad
                 self.saldo_pendiente += total
                 pel1.stock -= cantidad
-                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: {self.saldo_pendiente}")
+                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: ${self.saldo_pendiente}")
                 print(f"Stock actual de {pel1.titulo}: {pel1.stock}")
         elif pelicula == pel2.titulo:
             if cantidad > pel2.stock:
@@ -39,7 +39,7 @@ class Usuario:
                 total = pel2.precio_unitario * cantidad
                 self.saldo_pendiente += total
                 pel2.stock -= cantidad
-                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: {self.saldo_pendiente}")
+                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: ${self.saldo_pendiente}")
                 print(f"Stock actual de {pel2.titulo}: {pel2.stock}")
         elif pelicula == pel3.titulo:
             if cantidad > pel3.stock:
@@ -48,7 +48,7 @@ class Usuario:
                 total = pel3.precio_unitario * cantidad
                 self.saldo_pendiente += total
                 pel3.stock -= cantidad
-                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: {self.saldo_pendiente}")
+                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: ${self.saldo_pendiente}")
                 print(f"Stock actual de {pel3.titulo}: {pel3.stock}")
         elif pelicula == pel4.titulo:
             if cantidad > pel4.stock:
@@ -57,7 +57,7 @@ class Usuario:
                 total = pel4.precio_unitario * cantidad
                 self.saldo_pendiente += total
                 pel4.stock -= cantidad
-                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: {self.saldo_pendiente}")
+                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: ${self.saldo_pendiente}")
                 print(f"Stock actual de {pel4.titulo}: {pel4.stock}")
         elif pelicula == pel5.titulo:
             if cantidad > pel5.stock:
@@ -66,7 +66,7 @@ class Usuario:
                 total = pel5.precio_unitario * cantidad
                 self.saldo_pendiente += total
                 pel5.stock -= cantidad
-                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: {self.saldo_pendiente}")
+                print(f"\nPelícula/s comprada/s éxitosamente\nSaldo a pagar total: ${self.saldo_pendiente}")
                 print(f"Stock actual de {pel5.titulo}: {pel5.stock}")
         
     def pagar_saldo(self, monto):
@@ -75,7 +75,7 @@ class Usuario:
         else:
             print("Pagando saldo...")
             self.saldo_pendiente -= monto
-            if self.saldo_pendiente > 0:
+            if self.saldo_pendiente <= 0.0:
                 print("Saldo totalmente pagado.")
             else:
                 print(f"Parte del saldo pagado, pero aún quedan ${self.saldo_pendiente} por pagar")

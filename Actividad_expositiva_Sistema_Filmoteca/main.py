@@ -25,6 +25,7 @@ while True:
     
     if opcion == "1":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
             print(f"Películas:\n -{("\n -").join(Pelicula.peliculas)}")
@@ -61,23 +62,54 @@ while True:
                 print("Película inváida.")
         else:
             print("Usuario inválido.")
-        
     elif opcion == "2":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
-            pass
+            if user1.saldo_pendiente == "0":
+                print("El usuario no tiene un saldo que pagar.")
+            else:
+                print(f"Saldo a pagar: ${user1.saldo_pendiente}")
+                monto = float(input("Ingresa un monto de dinero: "))
+                if monto < 1:
+                    print("Monto de dinero inválido.")
+                else:
+                    user1.pagar_saldo(monto)
         elif user == "IncrediJavi":
-            pass
+            if user2.saldo_pendiente == "0":
+                print("El usuario no tiene un saldo que pagar.")
+            else:
+                print(f"Saldo a pagar: ${user2.saldo_pendiente}")
+                monto = float(input("Ingresa un monto de dinero: "))
+                if monto < 1:
+                    print("Monto de dinero inválido.")
+                else:
+                    user2.pagar_saldo(monto)
         elif user == "MegaDav":
-            pass
+            if user3.saldo_pendiente == "0":
+                print("El usuario no tiene un saldo que pagar.")
+            else:
+                print(f"Saldo a pagar: ${user3.saldo_pendiente}")
+                monto = float(input("Ingresa un monto de dinero: "))
+                if monto < 1:
+                    print("Monto de dinero inválido.")
+                else:
+                    user3.pagar_saldo(monto)
         else:
             print("Usuario inválido.")
     elif opcion == "3":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
-            pass
+            nuev_cont = input("Ingresa una nueva contraseña (mínimo 8 caracteres): ").strip()
+            if nuev_cont == user1.password_hash:
+                print("La contraseña es la misma.")
+            elif len(nuev_cont) < 8:
+                print("La contraseña es muy corta.")
+            else:
+                user1.cambiar_contrasena(nuev_cont)
         elif user == "IncrediJavi":
             pass
         elif user == "MegaDav":
