@@ -111,24 +111,38 @@ while True:
             else:
                 user1.cambiar_contrasena(nuev_cont)
         elif user == "IncrediJavi":
-            pass
+            nuev_cont = input("Ingresa una nueva contraseña (mínimo 8 caracteres): ").strip()
+            if nuev_cont == user2.password_hash:
+                print("La contraseña es la misma.")
+            elif len(nuev_cont) < 8:
+                print("La contraseña es muy corta.")
+            else:
+                user2.cambiar_contrasena(nuev_cont)
         elif user == "MegaDav":
-            pass
+            nuev_cont = input("Ingresa una nueva contraseña (mínimo 8 caracteres): ").strip()
+            if nuev_cont == user3.password_hash:
+                print("La contraseña es la misma.")
+            elif len(nuev_cont) < 8:
+                print("La contraseña es muy corta.")
+            else:
+                user3.cambiar_contrasena(nuev_cont)
         else:
             print("Usuario inválido.")
     elif opcion == "4":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
-            pass
+            user1.mostrar_usuarios()
         elif user == "IncrediJavi":
-            pass
+            user1.mostrar_usuarios()
         elif user == "MegaDav":
-            pass
+            user3.mostrar_usuarios()
         else:
             print("Usuario inválido.")
     elif opcion == "5":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
             pass
@@ -140,6 +154,7 @@ while True:
             print("Usuario inválido.")
     elif opcion == "6":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
             pass
@@ -151,6 +166,7 @@ while True:
             print("Usuario inválido.")
     elif opcion == "7":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
             pass
@@ -162,6 +178,7 @@ while True:
             print("Usuario inválido.")
     elif opcion == "8":
         limpiarConsola()
+        print(f"Usuarios registrados: \n- {("\n- ").join(Usuario.usuarios)}")
         user = input("Ingresa tu nombre de usuario: ")
         if user == "SuperDONO17":
             pass
